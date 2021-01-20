@@ -128,6 +128,10 @@ func (g Geometry) MarshalJSON() ([]byte, error) {
 		geo.Geometries = g.Geometries
 	}
 
+	if g.CRS != nil {
+		geo.CRS = g.CRS
+	}
+
 	return json.Marshal(geo)
 }
 
